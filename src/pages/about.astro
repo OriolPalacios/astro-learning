@@ -21,9 +21,19 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle} pageSubtitle={pageSubtitle}>
+  <style define:vars={{ skillColor, fontWeight, textCase }}>
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+      text-transform: var(--textCase);
+    }
+  </style>
   <p>
     I am working through Astro's introductory tutorial.<br />
     I am a student from the National University of San Antonio Abad of Cusco.
