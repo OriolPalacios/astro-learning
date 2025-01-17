@@ -2,20 +2,16 @@
 import "../styles/global.css";
 
 const { frontmatter } = Astro.props;
-const imageURL = frontmatter.image?.url || "black";
 const tags = frontmatter.tags;
 ---
 
-<!-- <figure>
-  <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-</figure> --><!-- adding this meta charset is very important! -->
 <meta charset="utf-8" />
 <div class="content-container">
   <header>
     <hr />
     <h1>{frontmatter.title}</h1>
     <p>Written by {frontmatter.author}</p>
-    <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p>Published on: {frontmatter.pubDate.toLocaleDateString()}</p>
     <blockquote>Description: {frontmatter.description}</blockquote>
     <div class="tags">
       {
